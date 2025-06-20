@@ -1,7 +1,7 @@
 import os
-
 from flask import Flask
 
+from routes.auth import auth_bp
 
 def create_app(test_config=None):
     # create and configure the app
@@ -28,5 +28,7 @@ def create_app(test_config=None):
     @app.route('/hello')
     def hello():
         return 'Hello, World!'
-
+        
+    app.register_blueprint(auth_bp)
+        
     return app
