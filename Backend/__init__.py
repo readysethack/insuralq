@@ -2,6 +2,7 @@ import os
 from flask import Flask
 
 from routes.auth import auth_bp
+from routes.claims import claims_bp
 
 def create_app(test_config=None):
     # create and configure the app
@@ -30,5 +31,6 @@ def create_app(test_config=None):
         return 'Hello, World!'
         
     app.register_blueprint(auth_bp)
+    app.register_blueprint(claims_bp)
         
     return app
