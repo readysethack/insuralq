@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
+import ClaimForm from "../components/ClaimForm";
 
 interface Message {
   sender: "user" | "bot";
@@ -99,6 +100,7 @@ const CustomerChatPage: React.FC = () => {
           </button>
         </form>
       </div>
+      <ClaimForm />
     </div>
   );
 };
