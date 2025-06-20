@@ -1,8 +1,11 @@
 import os
+import sys
 from flask import Flask
 
-from routes.auth import auth_bp
-from routes.claims import claims_bp
+from .routes.auth import auth_bp
+from .routes.claims import claims_bp
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 def create_app(test_config=None):
     # create and configure the app

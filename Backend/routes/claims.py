@@ -1,14 +1,9 @@
 from flask import Flask
 from flask import Blueprint
-import dotenv
-import os
 
-dotenv.load_dotenv()
+claims_bp = Blueprint('claims', __name__, url_prefix='/api/claims')
 
-openai_api_key = os.getenv('OPENAI_API_KEY')
-curacel_api_key = os.getenv('CURACEL_BASE_URL')
-
-claims_bp = Blueprint('claims', __name__, '/api/claims')
-
+@claims_bp.route('/', methods=['GET'])
 def get_claims():
-    pass
+    # This is a placeholder for the actual implementation
+    return {"message": "List of claims"}, 200
